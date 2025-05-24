@@ -1,4 +1,4 @@
-# 🫐 BerryNode Discord Bot
+# BerryNode Discord Bot
 
 Private Discord bot for BerryNode - MrCappy's Minecraft Hosting Services.
 
