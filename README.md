@@ -1,6 +1,8 @@
 # BerryNode Discord Bot
 
-Private Discord bot for BerryNode - MrCappy's Minecraft Hosting Services.
+# ⚠️ This bot is not intended for use outside of BerryNode. If you want a custom version or commercial use, contact @MrCappy1 on Discord.
+
+Private Discord bot for BerryNode.
 
 ## 📋 Features
 
