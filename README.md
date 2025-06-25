@@ -1,178 +1,207 @@
+Got it — here's the cleaned-up, more professional and slightly aggressive version of the README. No emojis, no fluff, but still human and sharp.
+
+---
+
 # BerryNode Discord Bot
 
-# ⚠️ This bot is not intended for use outside of BerryNode. If you want a custom version or commercial use, contact @MrCappy1 on Discord.
+**This bot is private and not intended for public use (This is just a showcase). If you want a custom version or want to license this commercially, message `@MrCappy1` on Discord.**
 
-Private Discord bot for BerryNode.
+Private, in-house Discord bot used for **BerryNode’s** support server. Built for automation, control, and not dealing with bullshit.
 
-## 📋 Features
+---
 
-### 🎯 Auto Role Management
-- Automatically assigns Member role to all new users
-- Monitors and re-assigns role if removed
-- Bulk role assignment on startup
-- Admin command: `!rolecheck`
+## Features
 
-### 🎫 Ticket System
-- Support ticket creation via dropdown menu
-- Categories: General, Minecraft Support, Billing, Partnership
-- Private ticket channels with support team access
-- Ticket closing and deletion with transcripts
-- Admin command: `!sendtickets`
+### Role Management
 
-### 📊 Comprehensive Logging
-Logs all server events to dedicated channel:
-- Member joins/leaves/kicks/bans
-- Message edits/deletes
-- Role updates
-- Channel creation/deletion
-- Voice channel activity
-- Invite creation
-- All moderation actions
+* Automatically assigns `Member` role to all new users
+* Re-applies the role if someone removes it (why would they even try?)
+* Bulk role assignment on bot startup
+* Admin command: `!rolecheck`
 
-### 👋 Welcome System
-- Sends welcome embed to new members
-- Clean, professional design with member avatar
+### Ticket System
 
-## 🚀 Installation
+* Ticket creation via dropdown panel
+* Categories: General, Minecraft Support, Billing, Partnerships
+* Auto-generates private channels visible only to support staff
+* Transcripts saved on deletion
+* Admin-only command: `!sendtickets`
 
-1. **Clone the repository**
+### Logging System
+
+Logs damn near everything to a logging channel:
+
+* Joins, leaves, bans, kicks
+* Message deletes and edits
+* Role updates
+* Channel creation/deletion
+* Voice activity
+* Invite creation
+* Every moderation action gets tracked
+
+### Welcome System
+
+* Sends a clean welcome embed with the user’s avatar
+* Looks polished and works every damn time
+
+---
+
+## Install It (If You're Dumb Enough to Try)
+
+1. Clone the repo:
+
 ```bash
 git clone https://github.com/MrCappyy/BerryNode-Bot
 cd berrynode-bot
 ```
 
-2. **Install dependencies**
+2. Install dependencies:
+
 ```bash
 npm install
 ```
 
-3. **Configure environment variables**
-Create a `.env` file in the root directory:
+3. Create your `.env` file:
+
 ```env
-DISCORD_TOKEN=YOUR_BOT_TOKEN_HERE
+DISCORD_TOKEN=YOUR_TOKEN_HERE
 MEMBER_ROLE_ID=1363744459925491794
 ```
 
-4. **Run the bot**
+4. Run the bot:
+
 ```bash
 npm start
 ```
 
-For development with auto-reload:
+For dev mode with auto-reload (nodemon):
+
 ```bash
 npm run dev
 ```
-
-## 📁 Project Structure
-```
-berrynode-bot/
-├── events/
-│   ├── ready.js              # Bot startup and status
-│   ├── guildMemberAdd.js     # New member handling
-│   ├── guildMemberUpdate.js  # Role monitoring
-│   ├── messageCreate.js      # Commands handling
-│   ├── allLogs.js           # Comprehensive logging
-│   └── ticketCommand.js      # Ticket panel command
-├── tickets/
-│   └── ticketHandler.js      # Ticket system logic
-├── .env                      # Environment variables (DO NOT COMMIT)
-├── .gitignore               # Git ignore rules
-├── index.js                 # Main bot file
-├── package.json             # Dependencies
-└── README.md               # This file
-```
-
-## 🔧 Configuration
-
-### Important IDs
-- **Member Role**: `1363744459925491794`
-- **Log Channel**: `1375679184319545475`
-- **Welcome Channel**: `1364042824512704607`
-- **Ticket Channel**: `1364040634511659159`
-- **Ticket Category**: `1365073975637704756`
-- **Support Role**: `1363742523276660847`
-- **Ticket Logs**: `1364042025732804608`
-
-### Bot Permissions Required
-- View Channels
-- Send Messages
-- Embed Links
-- Manage Roles
-- Manage Channels
-- Read Message History
-- Add Reactions
-- View Audit Log
-- Attach Files
-
-## 📝 Commands
-
-| Command | Permission | Description |
-|---------|------------|-------------|
-| `!rolecheck` | Administrator | Manually check and assign roles to all members |
-| `!sendtickets` | Administrator | Send ticket creation panel (only in ticket channel) |
-
-## 🎫 Ticket System Usage
-
-1. Admin runs `!sendtickets` in the designated channel
-2. Users select support category from dropdown
-3. Private ticket channel is created
-4. Ticket can be closed by:
-   - Ticket creator
-   - Support team
-   - Administrators
-5. Only admins can delete tickets (generates transcript)
-
-## 🔒 Security Notes
-
-- **NEVER commit `.env` file** - Contains bot token
-- Keep bot token secret and regenerate if exposed
-- This is a private bot for BerryNode server only
-- All sensitive IDs are hardcoded for this specific server
-
-## 🛠️ Development
-
-### Adding New Features
-1. Create new event files in `events/` folder
-2. Follow the existing event structure
-3. Bot automatically loads all `.js` files from events folder
-
-### Testing Locally
-```bash
-# Install nodemon for auto-reload
-npm install --save-dev nodemon
-
-# Run in development mode
-npm run dev
-```
-
-## 📊 Monitoring
-
-The bot logs all actions to:
-- Console with `[BerryNode]` prefix
-- Dedicated logging channel with embeds
-- Ticket transcripts saved on deletion
-
-## 🆘 Troubleshooting
-
-### Bot not coming online
-- Check bot token in `.env`
-- Ensure all intents are enabled in Discord Developer Portal
-- Check console for error messages
-
-### Roles not being assigned
-- Verify bot role is above Member role in hierarchy
-- Check role ID is correct
-- Ensure bot has Manage Roles permission
-
-### Tickets not working
-- Verify all channel and category IDs
-- Check bot has permissions in the category
-- Ensure support role exists
-
-## 👤 Author
-
-Created for **BerryNode** - MrCappy's Minecraft Hosting Services
 
 ---
 
-*This is a private bot and not intended for public use. All features are specifically designed for the BerryNode Discord server.*
+## Project Structure
+
+```
+berrynode-bot/
+├── events/               # Event handlers
+│   ├── ready.js
+│   ├── guildMemberAdd.js
+│   ├── guildMemberUpdate.js
+│   ├── messageCreate.js
+│   ├── allLogs.js
+│   └── ticketCommand.js
+├── tickets/
+│   └── ticketHandler.js
+├── .env                  # Your token (don’t be stupid and commit this)
+├── index.js              # Entry point
+├── package.json
+└── README.md
+```
+
+---
+
+## Configuration
+
+### Hardcoded IDs
+
+* Member Role: `1363744459925491794`
+* Log Channel: `1375679184319545475`
+* Welcome Channel: `1364042824512704607`
+* Ticket Panel Channel: `1364040634511659159`
+* Ticket Category: `1365073975637704756`
+* Support Role: `1363742523276660847`
+* Ticket Logs: `1364042025732804608`
+
+### Permissions Required
+
+* View Channels
+* Send Messages
+* Embed Links
+* Manage Roles
+* Manage Channels
+* Read Message History
+* Add Reactions
+* View Audit Log
+* Attach Files
+
+---
+
+## Commands
+
+| Command        | Permission | What It Does                         |
+| -------------- | ---------- | ------------------------------------ |
+| `!rolecheck`   | Admin      | Mass-checks and fixes roles          |
+| `!sendtickets` | Admin Only | Posts the dropdown panel for tickets |
+
+---
+
+## How Tickets Work
+
+1. Admin runs `!sendtickets`
+2. User picks a category
+3. Bot creates a private channel
+4. Only support, the user, and admins can see it
+5. Ticket can be closed by staff or the user
+6. Only admins can delete tickets (generates transcript)
+
+---
+
+## Security Notes
+
+* Don’t ever commit your `.env`.
+* If you leak your bot token, you’re an idiot. Regenerate it immediately.
+* This bot is **hardcoded** to the BerryNode server. Don't waste time trying to port it.
+
+---
+
+## Development Notes
+
+* Add new event files in `/events` — it auto-loads them
+* Follow the structure or it breaks
+* For dev mode, use nodemon:
+
+```bash
+npm run dev
+```
+
+---
+
+## Monitoring & Logging
+
+* Logs all actions to:
+
+  * Console (with `[BerryNode]` prefix)
+  * Logging channel (embed style)
+  * Transcripts saved on deletion
+
+---
+
+## Troubleshooting
+
+**Bot won’t come online?**
+
+* Double-check the token
+* Enable intents in Discord dev panel
+* Check console logs like an adult
+
+**Roles not being assigned?**
+
+* Bot role must be above Member
+* Make sure the role ID is correct
+* Permissions: Manage Roles
+
+**Tickets not working?**
+
+* Wrong IDs, missing channels, or perms
+* Make sure bot can view and create channels in the category
+* Support role must exist
+
+---
+
+## Author
+
+Made by MrCappy for **BerryNode Minecraft Hosting**
+If you’re not part of that, don’t touch this. 
