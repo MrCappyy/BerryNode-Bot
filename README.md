@@ -1,7 +1,3 @@
-Got it — here's the cleaned-up, more professional and slightly aggressive version of the README. No emojis, no fluff, but still human and sharp.
-
----
-
 # BerryNode Discord Bot
 
 **This bot is private and not intended for public use (This is just a showcase). If you want a custom version or want to license this commercially, message `@MrCappy1` on Discord.**
